@@ -2,6 +2,10 @@ package com.gildedrose;
 
 public class TexttestFixture {
     public static void main(String[] args) {
+        generateBaseLine(args);
+    }
+
+    private static void generateBaseLine(String[] args) {
         System.out.println("OMGHAI!");
 
         Item[] items = new Item[] {
@@ -19,12 +23,7 @@ public class TexttestFixture {
 
         GildedRose app = new GildedRose(items);
 
-        int days = 3;
-        if (args.length > 0) {
-            days = Integer.parseInt(args[0]) + 1;
-        }
-
-        for (int i = 0; i < days; i++) {
+        for (int i = 0; i < 3; i++) {
             System.out.println("-------- day " + i + " --------");
             System.out.println("name, sellIn, quality");
             for (Item item : items) {
