@@ -8,7 +8,7 @@ public class TexttestFixture {
         System.out.println(generateResultString());
     }
 
-    private static String generateResultString() {
+    public static String generateResultString() {
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
         PrintStream printStream = new PrintStream(outputStream);
         printStream.println("OMGHAI!");
