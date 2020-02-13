@@ -2,6 +2,10 @@ package com.gildedrose;
 
 public class TexttestFixture {
     public static void main(String[] args) {
+        generateBaseline(args);
+    }
+
+    private static void generateBaseline(String[] args) {
         System.out.println("OMGHAI!");
 
         Item[] items = new Item[] {
