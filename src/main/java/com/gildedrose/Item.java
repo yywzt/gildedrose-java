@@ -16,52 +16,52 @@ public class Item {
         this.quality = quality;
     }
 
-    void something(Item item) {
-        if (!item.name.equals(AGED_BRIE)
-                && !item.name.equals(BACKSTAGE)) {
-            if (item.quality > MIN_QUALITY) {
-                if (!item.name.equals(SULFURAS)) {
-                    item.quality = item.quality - 1;
+    void something() {
+        if (!name.equals(AGED_BRIE)
+                && !name.equals(BACKSTAGE)) {
+            if (quality > MIN_QUALITY) {
+                if (!name.equals(SULFURAS)) {
+                    quality = quality - 1;
                 }
             }
         } else {
-            if (item.quality < MAX_QUALITY) {
-                item.quality = item.quality + 1;
+            if (quality < MAX_QUALITY) {
+                quality = quality + 1;
 
-                if (item.name.equals(BACKSTAGE)) {
-                    if (item.sellIn < 11) {
-                        if (item.quality < MAX_QUALITY) {
-                            item.quality = item.quality + 1;
+                if (name.equals(BACKSTAGE)) {
+                    if (sellIn < 11) {
+                        if (quality < MAX_QUALITY) {
+                            quality = quality + 1;
                         }
                     }
 
-                    if (item.sellIn < 6) {
-                        if (item.quality < MAX_QUALITY) {
-                            item.quality = item.quality + 1;
+                    if (sellIn < 6) {
+                        if (quality < MAX_QUALITY) {
+                            quality = quality + 1;
                         }
                     }
                 }
             }
         }
 
-        if (!item.name.equals(SULFURAS)) {
-            item.sellIn = item.sellIn - 1;
+        if (!name.equals(SULFURAS)) {
+            sellIn = sellIn - 1;
         }
 
-        if (item.sellIn < MIN_SELL_IN) {
-            if (!item.name.equals(AGED_BRIE)) {
-                if (!item.name.equals(BACKSTAGE)) {
-                    if (item.quality > MIN_QUALITY) {
-                        if (!item.name.equals(SULFURAS)) {
-                            item.quality = item.quality - 1;
+        if (sellIn < MIN_SELL_IN) {
+            if (!name.equals(AGED_BRIE)) {
+                if (!name.equals(BACKSTAGE)) {
+                    if (quality > MIN_QUALITY) {
+                        if (!name.equals(SULFURAS)) {
+                            quality = quality - 1;
                         }
                     }
                 } else {
-                    item.quality = 0;
+                    quality = 0;
                 }
             } else {
-                if (item.quality < MAX_QUALITY) {
-                    item.quality = item.quality + 1;
+                if (quality < MAX_QUALITY) {
+                    quality = quality + 1;
                 }
             }
         }
