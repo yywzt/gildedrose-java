@@ -16,7 +16,7 @@ public class Item {
         this.quality = quality;
     }
 
-    void something() {
+    void updateQuality() {
         if (!name.equals(AGED_BRIE)
                 && !name.equals(BACKSTAGE)) {
             if (quality > MIN_QUALITY) {

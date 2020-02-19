@@ -1,7 +1,5 @@
 package com.gildedrose;
 
-import sun.management.snmp.jvmmib.JvmThreadInstanceTableMeta;
-
 class GildedRose {
     public static final String AGED_BRIE = "Aged Brie";
     public static final String BACKSTAGE = "Backstage passes to a TAFKAL80ETC concert";
@@ -17,7 +15,7 @@ class GildedRose {
 
     public void updateQuality() {
         for (Item item : items) {
-            item.something();
+            item.updateQuality();
         }
     }
 }
