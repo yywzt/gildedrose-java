@@ -33,14 +33,15 @@ public class Item {
             }
             return;
         }
-        if (!isBackStage()) {
+        if (isBackStage()) {
+            quality = 0;
+            return;
+        } else {
             if (quality > MIN_QUALITY) {
                 if (!isSulfuras()) {
                     quality = quality - 1;
                 }
             }
-        } else {
-            quality = 0;
         }
     }
 
