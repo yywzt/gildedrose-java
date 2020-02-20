@@ -27,9 +27,7 @@ public class Item {
     }
 
     protected void updateQualityAfterExpiration() {
-        if (quality > MIN_QUALITY) {
-            quality = quality - 1;
-        }
+        decreaseQuality();
     }
 
     private boolean isExpired() {
@@ -41,6 +39,10 @@ public class Item {
     }
 
     protected void updateQuality() {
+        decreaseQuality();
+    }
+
+    private void decreaseQuality() {
         if (quality > MIN_QUALITY) {
             quality = quality - 1;
         }
