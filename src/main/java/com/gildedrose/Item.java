@@ -71,11 +71,11 @@ public class Item {
         return false;
     }
 
-    private boolean isBackStage() {
+    protected boolean isBackStage() {
         return name.equals(BACKSTAGE);
     }
 
-    private boolean isAgedBrie() {
+    protected boolean isAgedBrie() {
         return name.equals(AGED_BRIE);
     }
 
