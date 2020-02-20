@@ -38,9 +38,10 @@ public class Item {
             return;
         }
         if (quality > MIN_QUALITY) {
-            if (!isSulfuras()) {
-                quality = quality - 1;
+            if (isSulfuras()) {
+                return;
             }
+            quality = quality - 1;
         }
     }
 
