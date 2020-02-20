@@ -41,26 +41,6 @@ public class Item {
     }
 
     protected void updateQuality() {
-        if (isBackStage()) {
-            if (quality < MAX_QUALITY) {
-                quality = quality + 1;
-
-                if (isBackStage()) {
-                    if (sellIn < 11) {
-                        if (quality < MAX_QUALITY) {
-                            quality = quality + 1;
-                        }
-                    }
-
-                    if (sellIn < 6) {
-                        if (quality < MAX_QUALITY) {
-                            quality = quality + 1;
-                        }
-                    }
-                }
-            }
-            return;
-        }
         if (quality > MIN_QUALITY) {
             quality = quality - 1;
         }
