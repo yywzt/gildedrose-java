@@ -15,7 +15,7 @@ public class TexttestFixture {
 
         Item[] items = new Item[] {
                 new Item("+5 Dexterity Vest", 10, 20), //
-                createAgedBrie(2, 0), //
+                Item.createAgedBrie(2, 0), //
                 new Item("Elixir of the Mongoose", 5, 7), //
                 createSulfuras(80, 0), //
                 createSulfuras(80, -1),
@@ -46,10 +46,6 @@ public class TexttestFixture {
 
     private static Item createSulfuras(int quality, int sellIn) {
         return new Item("Sulfuras, Hand of Ragnaros", sellIn, quality);
-    }
-
-    private static Item createAgedBrie(int sellIn, int quality) {
-        return new Item("Aged Brie", sellIn, quality);
     }
 
 }
