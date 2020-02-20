@@ -15,7 +15,7 @@ public class TexttestFixture {
 
         Item[] items = new Item[] {
                 new Item("+5 Dexterity Vest", 10, 20), //
-                Item.createAgedBrie(2, 0), //
+                new AgedBrie(2, 0), //
                 new Item("Elixir of the Mongoose", 5, 7), //
                 Item.createSulfuras(80, 0), //
                 Item.createSulfuras(80, -1),

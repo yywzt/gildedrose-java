@@ -16,10 +16,6 @@ public class Item {
         this.quality = quality;
     }
 
-    public static Item createAgedBrie(int sellIn, int quality) {
-        return new AgedBrie(sellIn, quality);
-    }
-
     public static Item createBackStage(int sellIn, int quality) {
         return new Item("Backstage passes to a TAFKAL80ETC concert", sellIn, quality);
     }
