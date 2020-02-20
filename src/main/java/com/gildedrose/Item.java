@@ -46,7 +46,7 @@ public class Item {
         return sellIn < MIN_SELL_IN;
     }
 
-    private void updateSellIn() {
+    protected void updateSellIn() {
         if (isSulfuras()) {
             return;
         }
