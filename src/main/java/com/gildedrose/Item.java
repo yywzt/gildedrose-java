@@ -16,7 +16,41 @@ public class Item {
         this.quality = quality;
     }
 
-    void updateQuality() {
+    void passOneDay() {
+        updateQuality();
+
+        updateSellIn();
+
+        isExpired();
+    }
+
+    private void isExpired() {
+        if (sellIn < MIN_SELL_IN) {
+            if (!isAgedBrie()) {
+                if (!isBackStage()) {
+                    if (quality > MIN_QUALITY) {
+                        if (!isSulfuras()) {
+                            quality = quality - 1;
+                        }
+                    }
+                } else {
+                    quality = 0;
+                }
+            } else {
+                if (quality < MAX_QUALITY) {
+                    quality = quality + 1;
+                }
+            }
+        }
+    }
+
+    private void updateSellIn() {
+        if (!isSulfuras()) {
+            sellIn = sellIn - 1;
+        }
+    }
+
+    private void updateQuality() {
         if (!isAgedBrie()
                 && !isBackStage()) {
             if (quality > MIN_QUALITY) {
@@ -40,28 +74,6 @@ public class Item {
                             quality = quality + 1;
                         }
                     }
-                }
-            }
-        }
-
-        if (!isSulfuras()) {
-            sellIn = sellIn - 1;
-        }
-
-        if (sellIn < MIN_SELL_IN) {
-            if (!isAgedBrie()) {
-                if (!isBackStage()) {
-                    if (quality > MIN_QUALITY) {
-                        if (!isSulfuras()) {
-                            quality = quality - 1;
-                        }
-                    }
-                } else {
-                    quality = 0;
-                }
-            } else {
-                if (quality < MAX_QUALITY) {
-                    quality = quality + 1;
                 }
             }
         }
