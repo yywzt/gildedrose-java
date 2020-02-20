@@ -78,8 +78,6 @@ public class Item {
         } else {
             if (quality <= MIN_QUALITY) {
                 return;
-            } else if (isSulfuras()) {
-                return;
             }
             quality = quality - 1;
         }
