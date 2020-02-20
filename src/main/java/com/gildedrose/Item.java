@@ -27,12 +27,6 @@ public class Item {
     }
 
     protected void updateQualityAfterExpiration() {
-        if (isAgedBrie()) {
-            if (quality < MAX_QUALITY) {
-                quality = quality + 1;
-            }
-            return;
-        }
         if (isBackStage()) {
             quality = 0;
             return;
