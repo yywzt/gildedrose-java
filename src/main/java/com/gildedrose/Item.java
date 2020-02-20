@@ -21,27 +21,31 @@ public class Item {
 
         updateSellIn();
 
-        isExpired();
+        if (isExpired()) {
+            updateQualityAfterExpiration();
+        }
     }
 
-    private void isExpired() {
-        if (sellIn < MIN_SELL_IN) {
-            if (!isAgedBrie()) {
-                if (!isBackStage()) {
-                    if (quality > MIN_QUALITY) {
-                        if (!isSulfuras()) {
-                            quality = quality - 1;
-                        }
+    private void updateQualityAfterExpiration() {
+        if (!isAgedBrie()) {
+            if (!isBackStage()) {
+                if (quality > MIN_QUALITY) {
+                    if (!isSulfuras()) {
+                        quality = quality - 1;
                     }
-                } else {
-                    quality = 0;
                 }
             } else {
-                if (quality < MAX_QUALITY) {
-                    quality = quality + 1;
-                }
+                quality = 0;
+            }
+        } else {
+            if (quality < MAX_QUALITY) {
+                quality = quality + 1;
             }
         }
+    }
+
+    private boolean isExpired() {
+        return sellIn < MIN_SELL_IN;
     }
 
     private void updateSellIn() {
