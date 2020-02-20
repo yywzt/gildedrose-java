@@ -27,10 +27,6 @@ public class Item {
     }
 
     protected void updateQualityAfterExpiration() {
-        if (isBackStage()) {
-            quality = 0;
-            return;
-        }
         if (quality > MIN_QUALITY) {
             quality = quality - 1;
         }
@@ -73,7 +69,6 @@ public class Item {
     protected boolean isBackStage() {
         return false;
     }
-
 
 
     @Override
