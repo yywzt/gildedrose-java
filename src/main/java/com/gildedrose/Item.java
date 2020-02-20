@@ -76,10 +76,9 @@ public class Item {
                 }
             }
         } else {
-            if (quality <= MIN_QUALITY) {
-                return;
+            if (quality > MIN_QUALITY) {
+                quality = quality - 1;
             }
-            quality = quality - 1;
         }
     }
 
