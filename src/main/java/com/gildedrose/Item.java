@@ -18,9 +18,9 @@ public class Item {
 
     void updateQuality() {
         if (!isAgedBrie()
-                && !name.equals(BACKSTAGE)) {
+                && !isBackStage()) {
             if (quality > MIN_QUALITY) {
-                if (!name.equals(SULFURAS)) {
+                if (!isSulfuras()) {
                     quality = quality - 1;
                 }
             }
@@ -28,7 +28,7 @@ public class Item {
             if (quality < MAX_QUALITY) {
                 quality = quality + 1;
 
-                if (name.equals(BACKSTAGE)) {
+                if (isBackStage()) {
                     if (sellIn < 11) {
                         if (quality < MAX_QUALITY) {
                             quality = quality + 1;
@@ -44,15 +44,15 @@ public class Item {
             }
         }
 
-        if (!name.equals(SULFURAS)) {
+        if (!isSulfuras()) {
             sellIn = sellIn - 1;
         }
 
         if (sellIn < MIN_SELL_IN) {
             if (!isAgedBrie()) {
-                if (!name.equals(BACKSTAGE)) {
+                if (!isBackStage()) {
                     if (quality > MIN_QUALITY) {
-                        if (!name.equals(SULFURAS)) {
+                        if (!isSulfuras()) {
                             quality = quality - 1;
                         }
                     }
@@ -65,6 +65,14 @@ public class Item {
                 }
             }
         }
+    }
+
+    private boolean isSulfuras() {
+        return name.equals(SULFURAS);
+    }
+
+    private boolean isBackStage() {
+        return name.equals(BACKSTAGE);
     }
 
     private boolean isAgedBrie() {
