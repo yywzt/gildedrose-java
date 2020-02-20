@@ -20,6 +20,15 @@ public class Item {
         return new Item("Aged Brie", sellIn, quality);
     }
 
+    public static Item createBackStage(int sellIn, int quality) {
+        return new Item("Backstage passes to a TAFKAL80ETC concert", sellIn, quality);
+    }
+
+    public static Item createSulfuras(int quality, int sellIn) {
+        return new Item("Sulfuras, Hand of Ragnaros", sellIn, quality);
+    }
+
+
     void updateQuality() {
         if (!isAgedBrie()
                 && !isBackStage()) {

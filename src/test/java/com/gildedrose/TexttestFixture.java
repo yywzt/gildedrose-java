@@ -17,12 +17,12 @@ public class TexttestFixture {
                 new Item("+5 Dexterity Vest", 10, 20), //
                 Item.createAgedBrie(2, 0), //
                 new Item("Elixir of the Mongoose", 5, 7), //
-                createSulfuras(80, 0), //
-                createSulfuras(80, -1),
-                createBackStage(15, 20),
-                createBackStage(10, 49),
-                createBackStage(5, 49),
-                createBackStage(1, 20),
+                Item.createSulfuras(80, 0), //
+                Item.createSulfuras(80, -1),
+                Item.createBackStage(15, 20),
+                Item.createBackStage(10, 49),
+                Item.createBackStage(5, 49),
+                Item.createBackStage(1, 20),
                 // this conjured item does not work properly yet
                 new Item("Conjured Mana Cake", 3, 6) };
 
@@ -39,13 +39,4 @@ public class TexttestFixture {
         }
         return outputStream.toString();
     }
-
-    private static Item createBackStage(int sellIn, int quality) {
-        return new Item("Backstage passes to a TAFKAL80ETC concert", sellIn, quality);
-    }
-
-    private static Item createSulfuras(int quality, int sellIn) {
-        return new Item("Sulfuras, Hand of Ragnaros", sellIn, quality);
-    }
-
 }
