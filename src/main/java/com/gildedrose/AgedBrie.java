@@ -18,10 +18,4 @@ public class AgedBrie extends Item {
     protected void updateQuality() {
         increaseQuality();
     }
-
-    private void increaseQuality() {
-        if (quality < MAX_QUALITY) {
-            quality = quality + 1;
-        }
-    }
 }

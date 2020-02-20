@@ -28,10 +28,4 @@ public class Backstage extends Item {
             }
         }
     }
-
-    private void increaseQuality() {
-        if (quality < MAX_QUALITY) {
-            quality = quality + 1;
-        }
-    }
 }

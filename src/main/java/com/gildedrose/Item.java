@@ -48,6 +48,12 @@ public class Item {
         }
     }
 
+    protected void increaseQuality() {
+        if (quality < MAX_QUALITY) {
+            quality = quality + 1;
+        }
+    }
+
     @Override
     public String toString() {
         return this.name + ", " + this.sellIn + ", " + this.quality;
