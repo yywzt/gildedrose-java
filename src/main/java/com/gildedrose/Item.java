@@ -31,6 +31,7 @@ public class Item {
             if (quality < MAX_QUALITY) {
                 quality = quality + 1;
             }
+            return;
         } else {
             if (!isBackStage()) {
                 if (quality > MIN_QUALITY) {
