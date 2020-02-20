@@ -46,11 +46,6 @@ public class Item {
         }
     }
 
-    protected boolean isBackStage() {
-        return false;
-    }
-
-
     @Override
     public String toString() {
         return this.name + ", " + this.sellIn + ", " + this.quality;
