@@ -17,7 +17,7 @@ public class Item {
     }
 
     void updateQuality() {
-        if (!name.equals(AGED_BRIE)
+        if (!isAgedBrie()
                 && !name.equals(BACKSTAGE)) {
             if (quality > MIN_QUALITY) {
                 if (!name.equals(SULFURAS)) {
@@ -49,7 +49,7 @@ public class Item {
         }
 
         if (sellIn < MIN_SELL_IN) {
-            if (!name.equals(AGED_BRIE)) {
+            if (!isAgedBrie()) {
                 if (!name.equals(BACKSTAGE)) {
                     if (quality > MIN_QUALITY) {
                         if (!name.equals(SULFURAS)) {
@@ -65,6 +65,10 @@ public class Item {
                 }
             }
         }
+    }
+
+    private boolean isAgedBrie() {
+        return name.equals(AGED_BRIE);
     }
 
     @Override
