@@ -32,16 +32,15 @@ public class Item {
                 quality = quality + 1;
             }
             return;
-        } else {
-            if (!isBackStage()) {
-                if (quality > MIN_QUALITY) {
-                    if (!isSulfuras()) {
-                        quality = quality - 1;
-                    }
+        }
+        if (!isBackStage()) {
+            if (quality > MIN_QUALITY) {
+                if (!isSulfuras()) {
+                    quality = quality - 1;
                 }
-            } else {
-                quality = 0;
             }
+        } else {
+            quality = 0;
         }
     }
 
