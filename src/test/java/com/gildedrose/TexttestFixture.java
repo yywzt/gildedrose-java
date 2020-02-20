@@ -19,10 +19,10 @@ public class TexttestFixture {
                 new Item("Elixir of the Mongoose", 5, 7), //
                 new Sulfuras(0, 80), //
                 new Sulfuras(-1, 80),
-                Item.createBackStage(15, 20),
-                Item.createBackStage(10, 49),
-                Item.createBackStage(5, 49),
-                Item.createBackStage(1, 20),
+                new Backstage(15, 20),
+                new Backstage(10, 49),
+                new Backstage(5, 49),
+                new Backstage(1, 20),
                 // this conjured item does not work properly yet
                 new Item("Conjured Mana Cake", 3, 6) };
 
