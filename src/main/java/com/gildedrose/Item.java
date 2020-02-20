@@ -74,9 +74,7 @@ public class Item {
         return false;
     }
 
-    protected boolean isAgedBrie() {
-        return false;
-    }
+
 
     @Override
     public String toString() {

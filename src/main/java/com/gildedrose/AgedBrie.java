@@ -10,11 +10,6 @@ public class AgedBrie extends Item {
     }
 
     @Override
-    protected boolean isAgedBrie() {
-        return true;
-    }
-
-    @Override
     protected void updateQualityAfterExpiration() {
         if (quality < MAX_QUALITY) {
             quality = quality + 1;
