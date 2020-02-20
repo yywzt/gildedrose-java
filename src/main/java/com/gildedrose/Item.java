@@ -76,7 +76,7 @@ public class Item {
     }
 
     protected boolean isAgedBrie() {
-        return name.equals(AGED_BRIE);
+        return false;
     }
 
     @Override
