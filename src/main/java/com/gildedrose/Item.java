@@ -72,7 +72,7 @@ public class Item {
     }
 
     protected boolean isBackStage() {
-        return name.equals(BACKSTAGE);
+        return false;
     }
 
     protected boolean isAgedBrie() {
