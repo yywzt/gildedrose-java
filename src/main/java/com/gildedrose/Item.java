@@ -17,7 +17,7 @@ public class Item {
     }
 
     public static Item createAgedBrie(int sellIn, int quality) {
-        return new AgedBrie(AGED_BRIE, sellIn, quality);
+        return new AgedBrie(sellIn, quality);
     }
 
     public static Item createBackStage(int sellIn, int quality) {
