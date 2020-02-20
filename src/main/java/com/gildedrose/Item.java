@@ -20,11 +20,6 @@ public class Item {
         return new Item("Backstage passes to a TAFKAL80ETC concert", sellIn, quality);
     }
 
-    public static Item createSulfuras(int sellIn,int quality) {
-        return new Sulfuras(SULFURAS,sellIn,quality);
-    }
-
-
     void updateQuality() {
         if (!isAgedBrie()
                 && !isBackStage()) {
