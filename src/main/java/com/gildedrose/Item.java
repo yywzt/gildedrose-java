@@ -68,7 +68,7 @@ public class Item {
     }
 
     protected boolean isSulfuras() {
-        return name.equals(SULFURAS);
+        return false;
     }
 
     private boolean isBackStage() {
