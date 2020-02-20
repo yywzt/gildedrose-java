@@ -76,9 +76,10 @@ public class Item {
                 }
             }
         } else {
-            if (quality > MIN_QUALITY && !isSulfuras()) {
-                quality = quality - 1;
+            if (quality <= MIN_QUALITY || isSulfuras()) {
+                return;
             }
+            quality = quality - 1;
         }
     }
 
