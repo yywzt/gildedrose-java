@@ -45,7 +45,7 @@ public class Item {
     }
 
     protected void updateQuality() {
-        if (isAgedBrie() || isBackStage()) {
+        if (isBackStage()) {
             if (quality < MAX_QUALITY) {
                 quality = quality + 1;
 
