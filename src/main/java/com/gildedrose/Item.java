@@ -55,7 +55,7 @@ public class Item {
         sellIn = sellIn - 1;
     }
 
-    private void updateQuality() {
+    protected void updateQuality() {
         if (isAgedBrie()
                 || isBackStage()) {
             if (quality < MAX_QUALITY) {
