@@ -13,14 +13,12 @@ public class TexttestFixture {
         PrintStream printStream = new PrintStream(outputStream);
         printStream.println("OMGHAI!");
 
-        int sellIn = 2;
-        int quality = 0;
         Item[] items = new Item[] {
                 new Item("+5 Dexterity Vest", 10, 20), //
-                Item.createAgedBrie(sellIn, quality), //
+                new AgedBrie(2, 0), //
                 new Item("Elixir of the Mongoose", 5, 7), //
-                new Item("Sulfuras, Hand of Ragnaros", 0, 80), //
-                new Item("Sulfuras, Hand of Ragnaros", -1, 80),
+                Item.createSulfuras(0, 80), //
+                Item.createSulfuras(-1, 80),
                 new Item("Backstage passes to a TAFKAL80ETC concert", 15, 20),
                 new Item("Backstage passes to a TAFKAL80ETC concert", 10, 49),
                 new Item("Backstage passes to a TAFKAL80ETC concert", 5, 49),
@@ -41,4 +39,5 @@ public class TexttestFixture {
         }
         return outputStream.toString();
     }
+
 }
