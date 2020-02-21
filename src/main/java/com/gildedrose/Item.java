@@ -91,7 +91,7 @@ public class Item {
         return false;
     }
 
-    private boolean isAgedBrie() {
+    protected boolean isAgedBrie() {
         return name.equals("Aged Brie");
     }
 
