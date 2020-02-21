@@ -61,6 +61,7 @@ public class Item {
                             }
                         }
                     }
+                    return;
                 } else {
             if (quality > 0) {
                 if (isSulfuras()) {
