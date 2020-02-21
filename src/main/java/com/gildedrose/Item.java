@@ -66,6 +66,11 @@ public class Item {
         }
     }
 
+    static Item createAgedBrie(int sellIn, int quality) {
+        return new Item("Aged Brie", sellIn, quality);
+    }
+
+
     private boolean isSulfuras() {
         return name.equals("Sulfuras, Hand of Ragnaros");
     }
