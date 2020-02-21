@@ -81,10 +81,6 @@ public class Item {
         }
     }
 
-    protected static Item createSulfuras(int sellIn, int quality) {
-        return new Item("Sulfuras, Hand of Ragnaros", sellIn, quality);
-    }
-
     private boolean isSulfuras() {
         return name.equals("Sulfuras, Hand of Ragnaros");
     }
