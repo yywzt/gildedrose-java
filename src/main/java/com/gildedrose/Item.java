@@ -24,7 +24,7 @@ public class Item {
         }
     }
 
-    private void updateQualityAfterExpiration() {
+    protected void updateQualityAfterExpiration() {
         if (isAgedBrie()) {
             if (quality < 50) {
                 quality = quality + 1;
@@ -48,9 +48,6 @@ public class Item {
     }
 
     protected void updateSellIn() {
-        if (isSulfuras()) {
-            return;
-        }
         sellIn = sellIn - 1;
     }
 
