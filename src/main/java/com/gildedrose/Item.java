@@ -92,7 +92,7 @@ public class Item {
     }
 
     protected boolean isAgedBrie() {
-        return name.equals("Aged Brie");
+        return false;
     }
 
     @Override

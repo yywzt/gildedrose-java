@@ -10,4 +10,5 @@ public class AgedBrie extends Item {
     protected boolean isAgedBrie() {
         return true;
     }
+
 }
