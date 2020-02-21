@@ -44,10 +44,6 @@ public class Item {
         }
     }
 
-    protected boolean isAgedBrie() {
-        return false;
-    }
-
     @Override
     public String toString() {
         return this.name + ", " + this.sellIn + ", " + this.quality;
