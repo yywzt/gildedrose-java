@@ -14,7 +14,7 @@ public class Item {
         this.quality = quality;
     }
 
-    public void something() {
+    public void passOneDay() {
         if (!isAgedBrie()
                 && !isBackstagePass()) {
             if (quality > 0) {
@@ -42,8 +42,7 @@ public class Item {
             }
         }
 
-        if (!
-                isSulfuras()) {
+        if (!isSulfuras()) {
             sellIn = sellIn - 1;
         }
 
