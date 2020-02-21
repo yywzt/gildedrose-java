@@ -71,10 +71,7 @@ public class Item {
         }
     }
 
-    private void updateSellIn() {
-        if (isSulfuras()) {
-            return;
-        }
+    protected void updateSellIn() {
         sellIn = sellIn - 1;
     }
 
@@ -82,16 +79,16 @@ public class Item {
         return sellIn < 0;
     }
 
-    private boolean isSulfuras() {
-        return name.equals(SULFURAS_HAND_OF_RAGNAROS);
+    protected boolean isSulfuras() {
+        return false;
     }
 
-    private boolean isBackstagePass() {
-        return name.equals(BACKSTAGE_PASSES_TO_A_TAFKAL_80_ETC_CONCERT);
+    protected boolean isBackstagePass() {
+        return false;
     }
 
-    private boolean isAgedBrie() {
-        return name.equals(AGED_BRIE);
+    protected boolean isAgedBrie() {
+        return false;
     }
 
     @Override
