@@ -15,14 +15,14 @@ public class TexttestFixture {
 
         Item[] items = new Item[]{
                 new Item("+5 Dexterity Vest", 10, 20), //
-                Item.createAgedBrie(2, 0), //
+                new AgedBrie(2, 0), //
                 new Item("Elixir of the Mongoose", 5, 7), //
-                Item.createSulfuras(0, 80), //
-                Item.createSulfuras(-1, 80),
-                Item.createBackstage(15, 20),
-                Item.createBackstage(10, 49),
-                Item.createBackstage(5, 49),
-                Item.createBackstage(1, 20),
+                new Sulfuras(0, 80), //
+                new Sulfuras(-1, 80),
+                new Backstage(15, 20),
+                new Backstage(10, 49),
+                new Backstage(5, 49),
+                new Backstage(1, 20),
                 // this conjured item does not work properly yet
                 new Item("Conjured Mana Cake", 3, 6)};
 

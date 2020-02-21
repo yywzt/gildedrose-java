@@ -2,6 +2,9 @@ package com.gildedrose;
 
 public class Item {
 
+    public static final String AGED_BRIE = "Aged Brie";
+    public static final String SULFURAS_HAND_OF_RAGNAROS = "Sulfuras, Hand of Ragnaros";
+    public static final String BACKSTAGE_PASSES_TO_A_TAFKAL_80_ETC_CONCERT = "Backstage passes to a TAFKAL80ETC concert";
     public String name;
 
     public int sellIn;
@@ -65,31 +68,17 @@ public class Item {
         }
     }
 
-    protected static Item createBackstage(int sellIn, int quality) {
-        return new Item("Backstage passes to a TAFKAL80ETC concert", sellIn, quality);
-    }
-
-    protected static Item createAgedBrie(int sellIn, int quality) {
-        return new Item("Aged Brie", sellIn, quality);
-    }
-
-    protected static Item createSulfuras(int sellIn, int quality) {
-        return new Item("Sulfuras, Hand of Ragnaros", sellIn, quality);
-    }
-
-
     private boolean isSulfuras() {
-        return name.equals("Sulfuras, Hand of Ragnaros");
+        return name.equals(SULFURAS_HAND_OF_RAGNAROS);
     }
 
     private boolean isBackstagePass() {
-        return name.equals("Backstage passes to a TAFKAL80ETC concert");
+        return name.equals(BACKSTAGE_PASSES_TO_A_TAFKAL_80_ETC_CONCERT);
     }
 
     private boolean isAgedBrie() {
-        return name.equals("Aged Brie");
+        return name.equals(AGED_BRIE);
     }
-
 
     @Override
     public String toString() {
