@@ -47,7 +47,7 @@ public class Item {
         return sellIn < 0;
     }
 
-    private void updateSellIn() {
+    protected void updateSellIn() {
         if (isSulfuras()) {
             return;
         }
@@ -83,12 +83,12 @@ public class Item {
         }
     }
 
-    private boolean isSulfuras() {
-        return name.equals("Sulfuras, Hand of Ragnaros");
+    protected boolean isSulfuras() {
+        return false;
     }
 
-    private boolean isBackstagePass() {
-        return name.equals("Backstage passes to a TAFKAL80ETC concert");
+    protected boolean isBackstagePass() {
+        return false;
     }
 
     private boolean isAgedBrie() {
