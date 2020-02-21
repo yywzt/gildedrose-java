@@ -43,7 +43,7 @@ public class Item {
         }
     }
 
-    private void updateQuality() {
+    protected void updateQuality() {
         if (isAgedBrie()
                 || isBackstagePass()) {
             if (quality < 50) {
@@ -66,9 +66,6 @@ public class Item {
             return;
         }
         if (quality > 0) {
-            if (isSulfuras()) {
-                return;
-            }
             quality = quality - 1;
         }
     }
