@@ -17,16 +17,18 @@ public class BackstagePass extends Item {
             quality = quality + 1;
 
             if (sellIn < 11) {
-                if (quality < 50) {
-                    quality = quality + 1;
-                }
+                increaseQuality();
             }
 
             if (sellIn < 6) {
-                if (quality < 50) {
-                    quality = quality + 1;
-                }
+                increaseQuality();
             }
+        }
+    }
+
+    private void increaseQuality() {
+        if (quality < 50) {
+            quality = quality + 1;
         }
     }
 }
