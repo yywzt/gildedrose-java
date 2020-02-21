@@ -65,6 +65,19 @@ public class Item {
         }
     }
 
+    protected static Item createBackstage(int sellIn, int quality) {
+        return new Item("Backstage passes to a TAFKAL80ETC concert", sellIn, quality);
+    }
+
+    protected static Item createAgedBrie(int sellIn, int quality) {
+        return new Item("Aged Brie", sellIn, quality);
+    }
+
+    protected static Item createSulfuras(int sellIn, int quality) {
+        return new Item("Sulfuras, Hand of Ragnaros", sellIn, quality);
+    }
+
+
     private boolean isSulfuras() {
         return name.equals("Sulfuras, Hand of Ragnaros");
     }
