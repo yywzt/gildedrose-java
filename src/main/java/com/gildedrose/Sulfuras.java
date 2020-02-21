@@ -15,4 +15,9 @@ public class Sulfuras extends Item {
     protected void updateSellIn() {
 
     }
+
+    @Override
+    protected void updateQualityAfterExpiration() {
+
+    }
 }
