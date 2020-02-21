@@ -44,31 +44,30 @@ public class Item {
     private void updateQuality() {
         if (isAgedBrie()
                 || isBackstagePass()) {
-                    if (quality < 50) {
-                        quality = quality + 1;
+            if (quality < 50) {
+                quality = quality + 1;
 
-                        if (isBackstagePass()) {
-                            if (sellIn < 11) {
-                                if (quality < 50) {
-                                    quality = quality + 1;
-                                }
-                            }
-
-                            if (sellIn < 6) {
-                                if (quality < 50) {
-                                    quality = quality + 1;
-                                }
-                            }
+                if (isBackstagePass()) {
+                    if (sellIn < 11) {
+                        if (quality < 50) {
+                            quality = quality + 1;
                         }
                     }
-                    return;
-                } else {
-            if (quality > 0) {
-                if (isSulfuras()) {
-                    return;
+
+                    if (sellIn < 6) {
+                        if (quality < 50) {
+                            quality = quality + 1;
+                        }
+                    }
                 }
-                quality = quality - 1;
             }
+            return;
+        }
+        if (quality > 0) {
+            if (isSulfuras()) {
+                return;
+            }
+            quality = quality - 1;
         }
     }
 
