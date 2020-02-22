@@ -13,6 +13,6 @@ public class Sulfuras extends Item {
 
     @Override
     protected void updateSellIn() {
-        super.updateSellIn();
+
     }
 }
