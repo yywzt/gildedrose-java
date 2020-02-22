@@ -27,13 +27,11 @@ public class Item {
         }
     }
 
-    private void updateQualityAfterExpiration() {
+    protected void updateQualityAfterExpiration() {
         if (!isAgedBrie()) {
             if (!isBackstagePass()) {
                 if (quality > 0) {
-                    if (!isSulfuras()) {
-                        quality = quality - 1;
-                    }
+                    quality = quality - 1;
                 }
             } else {
                 quality = quality - quality;
