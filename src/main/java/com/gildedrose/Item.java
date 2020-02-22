@@ -37,9 +37,6 @@ public class Item {
                 quality = quality - quality;
             } else {
                 if (quality > 0) {
-                    if (isSulfuras()) {
-                        return;
-                    }
                     quality = quality - 1;
                 }
             }
@@ -51,30 +48,28 @@ public class Item {
     }
 
     protected void updateQuality() {
-        if (!isAgedBrie()
-                && !isBackstgePass()) {
+        if (isAgedBrie()
+                || isBackstgePass()) {
+                    if (quality < 50) {
+                        quality = quality + 1;
+
+                        if (isBackstgePass()) {
+                            if (sellIn < 11) {
+                                if (quality < 50) {
+                                    quality = quality + 1;
+                                }
+                            }
+
+                            if (sellIn < 6) {
+                                if (quality < 50) {
+                                    quality = quality + 1;
+                                }
+                            }
+                        }
+                    }
+                } else {
             if (quality > 0) {
-                if (!isSulfuras()) {
-                    quality = quality - 1;
-                }
-            }
-        } else {
-            if (quality < 50) {
-                quality = quality + 1;
-
-                if (isBackstgePass()) {
-                    if (sellIn < 11) {
-                        if (quality < 50) {
-                            quality = quality + 1;
-                        }
-                    }
-
-                    if (sellIn < 6) {
-                        if (quality < 50) {
-                            quality = quality + 1;
-                        }
-                    }
-                }
+                quality = quality - 1;
             }
         }
     }
