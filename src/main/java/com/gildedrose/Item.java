@@ -29,7 +29,7 @@ public class Item {
 
     protected void updateQualityAfterExpiration() {
         if (isBackstagePass()) {
-            quality = quality - quality;
+
         } else {
             if (quality > 0) {
                 quality = quality - 1;

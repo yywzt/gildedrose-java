@@ -29,4 +29,9 @@ public class BackstagePass extends Item {
             }
         }
     }
+
+    @Override
+    protected void updateQualityAfterExpiration() {
+        quality = quality - quality;
+    }
 }
