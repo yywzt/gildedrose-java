@@ -28,19 +28,20 @@ public class Item {
     }
 
     protected void updateQualityExpiration() {
-        if (!isAgedBrie()) {
-            if (!isBackstgePass()) {
-                if (quality > 0) {
-                    if (!isSulfuras()) {
-                        quality = quality - 1;
-                    }
-                }
-            } else {
-                quality = quality - quality;
-            }
-        } else {
+        if (isAgedBrie()) {
             if (quality < 50) {
                 quality = quality + 1;
+            }
+        } else {
+            if (isBackstgePass()) {
+                quality = quality - quality;
+            } else {
+                if (quality > 0) {
+                    if (isSulfuras()) {
+                        return;
+                    }
+                    quality = quality - 1;
+                }
             }
         }
     }
