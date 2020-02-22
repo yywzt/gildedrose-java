@@ -2,6 +2,9 @@ package com.gildedrose;
 
 public class Item {
 
+    public static final String SULFURAS_HAND_OF_RAGNAROS = "Sulfuras, Hand of Ragnaros";
+    public static final String BACKSTAGE_PASSES_TO_A_TAFKAL_80_ETC_CONCERT = "Backstage passes to a TAFKAL80ETC concert";
+    public static final String AGED_BRIE = "Aged Brie";
     public String name;
 
     public int sellIn;
@@ -46,15 +49,16 @@ public class Item {
         return sellIn < 0;
     }
 
-    private void updateSellIn() {
-        if (!isSulfuras()) {
-            sellIn = sellIn - 1;
+    protected void updateSellIn() {
+        if (isSulfuras()) {
+            return;
         }
+        sellIn = sellIn - 1;
     }
 
     private void updateQuality() {
         if (!isAgedBrie()
-                && !name.equals("Backstage passes to a TAFKAL80ETC concert")) {
+                && !isBackstagePass()) {
             if (quality > 0) {
                 if (!isSulfuras()) {
                     quality = quality - 1;
@@ -64,7 +68,7 @@ public class Item {
             if (quality < 50) {
                 quality = quality + 1;
 
-                if (name.equals("Backstage passes to a TAFKAL80ETC concert")) {
+                if (isBackstagePass()) {
                     if (sellIn < 11) {
                         if (quality < 50) {
                             quality = quality + 1;
@@ -81,16 +85,16 @@ public class Item {
         }
     }
 
-    private boolean isBackstagePass() {
-        return name.equals("Backstage passes to a TAFKAL80ETC concert");
+    protected boolean isBackstagePass() {
+        return false;
     }
 
-    private boolean isSulfuras() {
-        return name.equals("Sulfuras, Hand of Ragnaros");
+    protected boolean isSulfuras() {
+        return false;
     }
 
-    private boolean isAgedBrie() {
-        return name.equals("Aged Brie");
+    protected boolean isAgedBrie() {
+        return false;
     }
 
     @Override
