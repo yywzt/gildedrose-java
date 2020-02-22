@@ -23,22 +23,16 @@ public class Item {
         updateSellIn();
 
         if (isExpired()) {
-            udpateQualityExpiration();
+            updateQualityAfterExpiration();
         }
     }
 
-    protected void udpateQualityExpiration() {
-        if (isAgedBrie()) {
-            if (quality < 50) {
-                quality = quality + 1;
-            }
+    protected void updateQualityAfterExpiration() {
+        if (isBackstagePass()) {
+            quality = quality - quality;
         } else {
-            if (isBackstagePass()) {
-                quality = quality - quality;
-            } else {
-                if (quality > 0) {
-                    quality = quality - 1;
-                }
+            if (quality > 0) {
+                quality = quality - 1;
             }
         }
     }
@@ -50,24 +44,24 @@ public class Item {
     protected void updateQuality() {
         if (isAgedBrie()
                 || isBackstagePass()) {
-                    if (quality < 50) {
-                        quality = quality + 1;
+            if (quality < 50) {
+                quality = quality + 1;
 
-                        if (isBackstagePass()) {
-                            if (sell_in < 11) {
-                                if (quality < 50) {
-                                    quality = quality + 1;
-                                }
-                            }
-
-                            if (sell_in < 6) {
-                                if (quality < 50) {
-                                    quality = quality + 1;
-                                }
-                            }
+                if (isBackstagePass()) {
+                    if (sell_in < 11) {
+                        if (quality < 50) {
+                            quality = quality + 1;
                         }
                     }
-                } else {
+
+                    if (sell_in < 6) {
+                        if (quality < 50) {
+                            quality = quality + 1;
+                        }
+                    }
+                }
+            }
+        } else {
             if (quality > 0) {
                 quality = quality - 1;
             }
