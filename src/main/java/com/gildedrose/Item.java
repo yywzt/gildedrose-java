@@ -28,13 +28,7 @@ public class Item {
     }
 
     protected void updateQualityAfterExpiration() {
-        if (isBackstagePass()) {
-
-        } else {
-            if (quality > 0) {
-                quality = quality - 1;
-            }
-        }
+        decreaseQuality();
     }
 
     private boolean isExpried() {
@@ -46,6 +40,16 @@ public class Item {
     }
 
     protected void updateQuality() {
+        decreaseQuality();
+    }
+
+    protected void increaseQuality() {
+        if (quality < 50) {
+            quality = quality + 1;
+        }
+    }
+
+    private void decreaseQuality() {
         if (quality > 0) {
             quality = quality - 1;
         }
