@@ -51,15 +51,9 @@ public class Item {
         sellIn = sellIn - 1;
     }
 
-    private void updateQuality() {
-        if (!isAgedBrie()
-                && !isBackstagePass()) {
-            if (quality > 0) {
-                if (!isSulfuras()) {
-                    quality = quality - 1;
-                }
-            }
-        } else {
+    protected void updateQuality() {
+        if (isAgedBrie()
+                || isBackstagePass()) {
             if (quality < 50) {
                 quality = quality + 1;
 
@@ -76,6 +70,10 @@ public class Item {
                         }
                     }
                 }
+            }
+        } else {
+            if (quality > 0) {
+                quality = quality - 1;
             }
         }
     }
