@@ -28,12 +28,21 @@ public class Item {
     }
 
     protected void updateQualityAfterExpiration() {
-        if (quality > 0) {
-            quality = quality - 1;
-        }
+        decreaseQuality();
     }
 
     protected void updateQuality() {
+        decreaseQuality();
+    }
+
+    protected void increaseQuality() {
+        if (quality < 50) {
+            quality = quality + 1;
+        }
+    }
+
+
+    private void decreaseQuality() {
         if (quality > 0) {
             quality = quality - 1;
         }
@@ -45,18 +54,6 @@ public class Item {
 
     private boolean isExpired() {
         return sellIn < 0;
-    }
-
-    protected boolean isSulfuras() {
-        return false;
-    }
-
-    protected boolean isBackstagePass() {
-        return false;
-    }
-
-    protected boolean isAgedBrie() {
-        return false;
     }
 
     @Override
