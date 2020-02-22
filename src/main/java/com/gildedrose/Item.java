@@ -15,8 +15,46 @@ public class Item {
     }
 
     protected void something() {
+        updateQuality();
+
+        updateSellIn();
+
+        if (isExpried()) {
+            updateQualityAfterExpiration();
+        }
+    }
+
+    private void updateQualityAfterExpiration() {
+        if (!isAgedBrie()) {
+            if (!isBackstagePass()) {
+                if (quality > 0) {
+                    if (!isSulfuras()) {
+                        quality = quality - 1;
+                    }
+                }
+            } else {
+                quality = quality - quality;
+            }
+        } else {
+            if (quality < 50) {
+                quality = quality + 1;
+            }
+        }
+    }
+
+    private boolean isExpried() {
+        return sellIn < 0;
+    }
+
+    private void updateSellIn() {
+        if (!isSulfuras()) {
+            sellIn = sellIn - 1;
+        }
+    }
+
+    private void updateQuality() {
         if (!isAgedBrie()
-                && !isBackstagePass()) {
+                && !name.equals("Backstage passes to a TAFKAL80ETC concert")) {
             if (quality > 0) {
                 if (!isSulfuras()) {
                     quality = quality - 1;
@@ -26,7 +64,7 @@ public class Item {
             if (quality < 50) {
                 quality = quality + 1;
 
-                if (isBackstagePass()) {
+                if (name.equals("Backstage passes to a TAFKAL80ETC concert")) {
                     if (sellIn < 11) {
                         if (quality < 50) {
                             quality = quality + 1;
@@ -38,28 +76,6 @@ public class Item {
                             quality = quality + 1;
                         }
                     }
-                }
-            }
-        }
-
-        if (!isSulfuras()) {
-            sellIn = sellIn - 1;
-        }
-
-        if (sellIn < 0) {
-            if (!isAgedBrie()) {
-                if (!isBackstagePass()) {
-                    if (quality > 0) {
-                        if (!isSulfuras()) {
-                            quality = quality - 1;
-                        }
-                    }
-                } else {
-                    quality = quality - quality;
-                }
-            } else {
-                if (quality < 50) {
-                    quality = quality + 1;
                 }
             }
         }
