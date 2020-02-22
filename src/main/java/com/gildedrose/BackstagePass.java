@@ -13,6 +13,6 @@ public class BackstagePass extends Item {
 
     @Override
     protected void updateQualityAfterExpiration() {
-        super.updateQualityAfterExpiration();
+        quality = quality - quality;
     }
 }
