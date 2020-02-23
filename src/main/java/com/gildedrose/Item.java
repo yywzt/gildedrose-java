@@ -14,7 +14,7 @@ public class Item {
         this.quality = quality;
     }
 
-    public void something(Item item) {
+    public void something() {
         if (!name.equals("Aged Brie")
                 && !name.equals("Backstage passes to a TAFKAL80ETC concert")) {
             if (quality > 0) {
