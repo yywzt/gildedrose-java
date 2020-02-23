@@ -28,12 +28,8 @@ public class Item {
     }
 
     public void updateQualityExpiration() {
-        if (isBackstagePass()) {
-            quality = quality - quality;
-        } else {
-            if (quality > 0) {
-                quality = quality - 1;
-            }
+        if (quality > 0) {
+            quality = quality - 1;
         }
     }
 
