@@ -73,11 +73,11 @@ public class Item {
     }
 
     protected boolean isBackstagePass() {
-        return name.equals(BACKSTAGE_PASSES_TO_A_TAFKAL_80_ETC_CONCERT);
+        return false;
     }
 
     protected boolean isAgedBrie() {
-        return name.equals(AGED_BRIE);
+        return false;
     }
 
 
