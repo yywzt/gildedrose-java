@@ -18,54 +18,64 @@ public class Item {
     }
 
     public void something() {
-        if (!isAgedBrie()
-                && !isBackstagePass()) {
-            if (quality > 0) {
-                if (!isSulfuras()) {
+        updateQuality();
+
+        updateSellIn();
+
+        if (isExpiration()) {
+            updateQualityExpiration();
+        }
+    }
+
+    public void updateQualityExpiration() {
+        if (isAgedBrie()) {
+            if (quality < 50) {
+                quality = quality + 1;
+            }
+        } else {
+            if (isBackstagePass()) {
+                quality = quality - quality;
+            } else {
+                if (quality > 0) {
                     quality = quality - 1;
                 }
             }
-        } else {
-            if (quality < 50) {
-                quality = quality + 1;
-
-                if (isBackstagePass()) {
-                    if (sellIn < 11) {
-                        if (quality < 50) {
-                            quality = quality + 1;
-                        }
-                    }
-
-                    if (sellIn < 6) {
-                        if (quality < 50) {
-                            quality = quality + 1;
-                        }
-                    }
-                }
-            }
         }
+    }
 
-        if (!isSulfuras()) {
-            sellIn = sellIn - 1;
-        }
+    protected void updateSellIn() {
+        sellIn = sellIn - 1;
+    }
 
-        if (sellIn < 0) {
-            if (!isAgedBrie()) {
-                if (!isBackstagePass()) {
-                    if (quality > 0) {
-                        if (!isSulfuras()) {
-                            quality = quality - 1;
+    protected void updateQuality() {
+        if (isAgedBrie()
+                || isBackstagePass()) {
+                    if (quality < 50) {
+                        quality = quality + 1;
+
+                        if (isBackstagePass()) {
+                            if (sellIn < 11) {
+                                if (quality < 50) {
+                                    quality = quality + 1;
+                                }
+                            }
+
+                            if (sellIn < 6) {
+                                if (quality < 50) {
+                                    quality = quality + 1;
+                                }
+                            }
                         }
                     }
                 } else {
-                    quality = quality - quality;
-                }
-            } else {
-                if (quality < 50) {
-                    quality = quality + 1;
-                }
+            if (quality > 0) {
+                quality = quality - 1;
             }
         }
+    }
+
+    private boolean isExpiration() {
+        return sellIn < 0;
     }
 
     protected boolean isSulfuras() {
