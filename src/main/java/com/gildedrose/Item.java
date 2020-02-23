@@ -29,9 +29,6 @@ public class Item {
 
     public void updateQualityExpiration() {
         if (isAgedBrie()) {
-            if (quality < 50) {
-                quality = quality + 1;
-            }
         } else {
             if (isBackstagePass()) {
                 quality = quality - quality;
