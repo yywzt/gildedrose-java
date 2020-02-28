@@ -28,14 +28,8 @@ public class Item {
     }
 
     public void updateQualityAfterExpiration() {
-        if (isAgedBrie()) {
-            if (quality < 50) {
-                quality = quality + 1;
-            }
-        } else {
-            if (quality > 0) {
-                quality = quality - 1;
-            }
+        if (quality > 0) {
+            quality = quality - 1;
         }
     }
 
@@ -44,14 +38,8 @@ public class Item {
     }
 
     public void udpateQuality() {
-        if (isAgedBrie()) {
-                    if (quality < 50) {
-                        quality = quality + 1;
-                    }
-                } else {
-            if (quality > 0) {
-                quality = quality - 1;
-            }
+        if (quality > 0) {
+            quality = quality - 1;
         }
     }
 
