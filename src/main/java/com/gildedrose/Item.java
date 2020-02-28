@@ -77,7 +77,7 @@ public class Item {
     }
 
     public boolean isAgedBrie() {
-        return false;
+        return true;
     }
 
 
