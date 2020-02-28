@@ -69,15 +69,15 @@ public class Item {
     }
 
     public boolean isBackstagePass() {
-        return name.equals(BACKSTAGE_PASSES_TO_A_TAFKAL_80_ETC_CONCERT);
+        return false;
     }
 
     public boolean isSulfuras() {
-        return name.equals(SULFURAS_HAND_OF_RAGNAROS);
+        return false;
     }
 
     public boolean isAgedBrie() {
-        return true;
+        return false;
     }
 
 
