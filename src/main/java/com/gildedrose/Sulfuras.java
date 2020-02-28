@@ -15,4 +15,14 @@ public class Sulfuras extends Item {
     public void updateSellIn() {
 
     }
+
+    @Override
+    public void udpateQuality() {
+
+    }
+
+    @Override
+    public void updateQualityAfterExpiration() {
+
+    }
 }
