@@ -46,9 +46,6 @@ public class Item {
     }
 
     public void updateSellIn() {
-        if (isSulfuras()) {
-            return;
-        }
         sellIn = sellIn - 1;
     }
 
