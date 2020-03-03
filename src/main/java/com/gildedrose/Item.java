@@ -18,14 +18,31 @@ public class Item {
     }
 
     public void dosomething() {
-        if (!isAgedBrie()
-                && !isBackstagePass()) {
-            if (quality > 0) {
-                if (!isSulfuras()) {
-                    quality = quality - 1;
-                }
-            }
+        updateQuality();
+
+        updateSellIn();
+
+        if (isExpired())
+            updateQualityAfterExpiration();
+    }
+
+    public void updateQualityAfterExpiration() {
+        if (isBackstagePass()) {
+            quality = quality - quality;
         } else {
+            if (quality > 0) {
+                quality = quality - 1;
+            }
+        }
+
+    }
+
+    public void updateSellIn() {
+        sellIn = sellIn - 1;
+    }
+
+    public void updateQuality() {
+        if (isAgedBrie() || isBackstagePass()) {
             if (quality < 50) {
                 quality = quality + 1;
 
@@ -43,27 +60,9 @@ public class Item {
                     }
                 }
             }
-        }
-
-        if (!isSulfuras()) {
-            sellIn = sellIn - 1;
-        }
-
-        if (isExpired()) {
-            if (!isAgedBrie()) {
-                if (!isBackstagePass()) {
-                    if (quality > 0) {
-                        if (!isSulfuras()) {
-                            quality = quality - 1;
-                        }
-                    }
-                } else {
-                    quality = quality - quality;
-                }
-            } else {
-                if (quality < 50) {
-                    quality = quality + 1;
-                }
+        } else {
+            if (quality > 0) {
+                quality = quality - 1;
             }
         }
     }
@@ -72,16 +71,16 @@ public class Item {
         return sellIn < 0;
     }
 
-    private boolean isBackstagePass() {
-        return name.equals(BACKSTAGE_PASSES_TO_A_TAFKAL_80_ETC_CONCERT);
+    public boolean isBackstagePass() {
+        return false;
     }
 
-    private boolean isSulfuras() {
-        return name.equals(SULFURAS_HAND_OF_RAGNAROS);
+    public boolean isSulfuras() {
+        return false;
     }
 
-    private boolean isAgedBrie() {
-        return name.equals(AGED_BRIE);
+    public boolean isAgedBrie() {
+        return false;
     }
 
 
