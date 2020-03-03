@@ -2,6 +2,9 @@ package com.gildedrose;
 
 public class Item {
 
+    public static final String AGED_BRIE = "Aged Brie";
+    public static final String SULFURAS_HAND_OF_RAGNAROS = "Sulfuras, Hand of Ragnaros";
+    public static final String BACKSTAGE_PASSES_TO_A_TAFKAL_80_ETC_CONCERT = "Backstage passes to a TAFKAL80ETC concert";
     public String name;
 
     public int sellIn;
@@ -46,7 +49,7 @@ public class Item {
             sellIn = sellIn - 1;
         }
 
-        if (sellIn < 0) {
+        if (isExpired()) {
             if (!isAgedBrie()) {
                 if (!isBackstagePass()) {
                     if (quality > 0) {
@@ -65,16 +68,20 @@ public class Item {
         }
     }
 
+    private boolean isExpired() {
+        return sellIn < 0;
+    }
+
     private boolean isBackstagePass() {
-        return name.equals("Backstage passes to a TAFKAL80ETC concert");
+        return name.equals(BACKSTAGE_PASSES_TO_A_TAFKAL_80_ETC_CONCERT);
     }
 
     private boolean isSulfuras() {
-        return name.equals("Sulfuras, Hand of Ragnaros");
+        return name.equals(SULFURAS_HAND_OF_RAGNAROS);
     }
 
     private boolean isAgedBrie() {
-        return name.equals("Aged Brie");
+        return name.equals(AGED_BRIE);
     }
 
 
