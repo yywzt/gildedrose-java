@@ -20,4 +20,9 @@ public class Sulfuras extends Item {
     public void updateQualityWhenExpried() {
 
     }
+
+    @Override
+    public void updateQualityNormal() {
+
+    }
 }
