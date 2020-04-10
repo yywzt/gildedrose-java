@@ -7,11 +7,6 @@ public class Sulfuras extends Item {
     }
 
     @Override
-    public boolean isSulfuras() {
-        return true;
-    }
-
-    @Override
     public void updateSellIn() {
 
     }

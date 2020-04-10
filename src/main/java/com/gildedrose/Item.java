@@ -33,12 +33,8 @@ public class Item {
                 quality = quality + 1;
             }
         } else {
-            if (isBackstagePass()) {
-                quality = 0;
-            } else {
-                if (quality > 0) {
-                    quality = quality - 1;
-                }
+            if (quality > 0) {
+                quality = quality - 1;
             }
         }
     }
@@ -48,23 +44,9 @@ public class Item {
     }
 
     public void updateQualityNormal() {
-        if (isAgedBrie() || isBackstagePass()) {
+        if (isAgedBrie()) {
             if (quality < 50) {
                 quality = quality + 1;
-
-                if (isBackstagePass()) {
-                    if (sellIn < 11) {
-                        if (quality < 50) {
-                            quality = quality + 1;
-                        }
-                    }
-
-                    if (sellIn < 6) {
-                        if (quality < 50) {
-                            quality = quality + 1;
-                        }
-                    }
-                }
             }
         } else {
             if (quality > 0) {
@@ -75,10 +57,6 @@ public class Item {
 
     private boolean isExpried() {
         return sellIn < 0;
-    }
-
-    public boolean isSulfuras() {
-        return false;
     }
 
     public boolean isBackstagePass() {
