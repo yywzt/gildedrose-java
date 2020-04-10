@@ -46,9 +46,7 @@ public class Item {
     }
 
     public void updateSellIn() {
-        if (!isSulfuras()) {
-            sellIn = sellIn - 1;
-        }
+        sellIn = sellIn - 1;
     }
 
     public void updateQualityNormal() {
