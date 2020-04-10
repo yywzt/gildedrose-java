@@ -68,16 +68,16 @@ public class Item {
         }
     }
 
-    private boolean isSulfuras() {
+    public boolean isSulfuras() {
         return name.equals(SULFURAS_HAND_OF_RAGNAROS);
     }
 
-    private boolean isBackstagePass() {
+    public boolean isBackstagePass() {
         return name.equals(BACKSTAGE_PASSES_TO_A_TAFKAL_80_ETC_CONCERT);
     }
 
-    private boolean isAgedBrie() {
-        return name.equals(AGED_BRIE);
+    public boolean isAgedBrie() {
+        return false;
     }
 
     @Override
