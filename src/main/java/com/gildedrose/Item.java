@@ -19,12 +19,14 @@ public class Item {
 
     public void updateQuality() {
         updateQualityNormal();
-
         updateSellIn();
-
         if (isExpried()) {
             updateQualityWhenExpried();
         }
+    }
+
+    public void increaseQuality() {
+        quality = quality + 1;
     }
 
     public void updateQualityWhenExpried() {
@@ -45,14 +47,6 @@ public class Item {
 
     private boolean isExpried() {
         return sellIn < 0;
-    }
-
-    public boolean isBackstagePass() {
-        return false;
-    }
-
-    public boolean isAgedBrie() {
-        return false;
     }
 
     @Override

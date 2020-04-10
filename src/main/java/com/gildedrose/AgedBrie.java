@@ -7,21 +7,16 @@ public class AgedBrie extends Item {
     }
 
     @Override
-    public boolean isAgedBrie() {
-        return true;
-    }
-
-    @Override
     public void updateQualityWhenExpried() {
         if (quality < 50) {
-            quality = quality + 1;
+            increaseQuality();
         }
     }
 
     @Override
     public void updateQualityNormal() {
         if (quality < 50) {
-            quality = quality + 1;
+            increaseQuality();
         }
     }
 }

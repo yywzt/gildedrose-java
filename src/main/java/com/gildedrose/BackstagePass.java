@@ -7,11 +7,6 @@ public class BackstagePass extends Item {
     }
 
     @Override
-    public boolean isBackstagePass() {
-        return true;
-    }
-
-    @Override
     public void updateQualityWhenExpried() {
         quality = 0;
     }
@@ -19,19 +14,21 @@ public class BackstagePass extends Item {
     @Override
     public void updateQualityNormal() {
         if (quality < 50) {
-            quality = quality + 1;
+            increaseQuality();
 
             if (sellIn < 11) {
                 if (quality < 50) {
-                    quality = quality + 1;
+                    increaseQuality();
                 }
             }
 
             if (sellIn < 6) {
                 if (quality < 50) {
-                    quality = quality + 1;
+                    increaseQuality();
                 }
             }
         }
     }
+
+
 }
